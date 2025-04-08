@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://chgwxhrtw1lln"]
+[gd_scene load_steps=6 format=3 uid="uid://chgwxhrtw1lln"]
 
-[ext_resource type="Script" path="res://Scenes/main/main.gd" id="1_22s4b"]
-[ext_resource type="Script" path="res://Scenes/ui/hud.gd" id="2_cy82p"]
+[ext_resource type="Script" uid="uid://bko10gysewvi5" path="res://Scenes/main/main.gd" id="1_22s4b"]
+[ext_resource type="Script" uid="uid://bvxv5y20ep43w" path="res://Scenes/ui/hud.gd" id="2_cy82p"]
 [ext_resource type="PackedScene" uid="uid://d0otd33ubv3hq" path="res://Scenes/ui/turretUI/turret_buy_container.tscn" id="3_pljl8"]
-[ext_resource type="Script" path="res://Scenes/ui/turretUI/turrets_panel.gd" id="3_ryupq"]
+[ext_resource type="Script" uid="uid://bm263f3k0puog" path="res://Scenes/ui/turretUI/turrets_panel.gd" id="3_ryupq"]
+[ext_resource type="AudioStream" uid="uid://c0kqyvh5gstpp" path="res://Assets/vfx/Goblin_Tinker_Soldier_Spy.mp3" id="5_brlrh"]
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_22s4b")
@@ -71,5 +72,10 @@ horizontal_alignment = 1
 unique_name_in_owner = true
 layout_mode = 2
 horizontal_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_brlrh")
+autoplay = true
+parameters/looping = true
 
 [connection signal="timeout" from="UI/HUD/WaveWaitTimer" to="UI/HUD" method="_on_wave_wait_timer_timeout"]
